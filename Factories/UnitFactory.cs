@@ -76,7 +76,7 @@ namespace BotFactory.Factories
                 _queue.Add(fqe);
             }
             bool result = await Task.Run(() => { return CreaInstance(fqe); });
-            if (_queue.Count() > 0 && _storage.Count() < QueueCapacity)
+            if (_queue.Count() > 0)
             {
                 _queue.Remove(fqe);
             }
