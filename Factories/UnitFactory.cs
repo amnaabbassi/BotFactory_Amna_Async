@@ -88,8 +88,6 @@ namespace BotFactory.Factories
             lock (this)
             {
                 ITestingUnit elementinstan = Construire(felement);
-
-                OnStatusChanged(elementinstan, new StatusChangedEventArgs() { NewStatus = "Add to Storage.." });
                 _storage.Add(elementinstan);
                 return true;
             }
