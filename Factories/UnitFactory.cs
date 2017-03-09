@@ -75,9 +75,7 @@ namespace BotFactory.Factories
                 fqe = new FactoryQueueElement() { Name = name, Model = model, ParkingPos = parkingpos, WorkingPos = workingpos };
                 _queue.Add(fqe);
             }
-
             bool result = await Task.Run(() => { return CreaInstance(fqe); });
-
             if (_queue.Count() > 0 && _storage.Count() < QueueCapacity)
             {
                 _queue.Remove(fqe);
@@ -122,7 +120,6 @@ namespace BotFactory.Factories
             StorageCapacity = s;
             Queue = new List<IFactoryQueueElement>();
             Storage = new List<ITestingUnit>();
-
         }
 
         private void OnStatusChanged(object sender, StatusChangedEventArgs statusChangedEventArgs)
